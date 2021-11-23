@@ -6,11 +6,11 @@ public class RegexMain {
 	
 	public static void main(String[] args) {
 	
-	String pattern = "^(?=.*[a-z])(?=.*[A-Z]).{8,}$";
+	String pattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$";
 	Scanner sc = new Scanner(System.in);
 	System.out.println("Enter the Password :");
-	String passwordRule2 = sc.nextLine();
-	System.out.println(Pattern.matches(pattern, passwordRule2));
-	
+	String passwordRule3 = sc.nextLine();
+	System.out.println(Pattern.matches(pattern, passwordRule3));
+
 	}
 }
