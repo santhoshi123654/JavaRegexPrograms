@@ -6,7 +6,7 @@ public class RegexMain {
 	
 	public static void main(String[] args) {
 	
-	String pattern = "^([a-zA-Z]{8,}{1,})$";
+	String pattern = "^(?=.*[a-z])(?=.*[A-Z]).{8,}$";
 	Scanner sc = new Scanner(System.in);
 	System.out.println("Enter the Password :");
 	String passwordRule2 = sc.nextLine();
