@@ -6,12 +6,13 @@ public class RegexMain {
 	
 	public static void main(String[] args) {
 	
-	String pattern = "^([1-9]){2}\s[(0-9)]{10}$";
-	Scanner sc = new Scanner(System.in);
-	System.out.println("Enter the PhoneNumber :");
-	String phoneNumber = sc.nextLine();
-	System.out.println(Pattern.matches(pattern, phoneNumber));
-	String mobileNum = "91 9919819801";
-	System.out.println(Pattern.matches(pattern, mobileNum));	
+
+		String pattern = "^([a-z]){8,}$";
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the Password :");
+		String passwordRule1 = sc.nextLine();
+		System.out.println(Pattern.matches(pattern, passwordRule1));
+	
 	}
 }
+
