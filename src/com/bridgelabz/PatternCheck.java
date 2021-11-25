@@ -90,7 +90,7 @@ public class PatternCheck {
 			while (true) {
 				String password = scanner.nextLine();
 				if (Pattern.matches(pattern, password)) {
-					registration.setPhoneNumber(password);
+					registration.setPassword(password);
 					System.out.println("Valid");
 					break;
 				}
