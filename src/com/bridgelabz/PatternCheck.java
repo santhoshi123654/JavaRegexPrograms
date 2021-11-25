@@ -50,7 +50,7 @@ public class PatternCheck {
 		while (true) {
 			String emailId = scanner.next();
 			if (Pattern.matches(pattern, emailId)) {
-				registration.setLastName(emailId);
+				registration.setEmailId(emailId);
 				System.out.println("Valid Email");
 				break;
 			}
