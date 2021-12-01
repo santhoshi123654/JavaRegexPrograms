@@ -1,56 +1,58 @@
 package com.bridgelabz;
 
+import java.util.regex.Pattern;
+
 public class UserRegistration {
 	
-	String firstName;
-	String LastName;
-	String phoneNumber;
-	String emailId;
-	String password;
-
-	public String getFirstName() {
-		return firstName;
+	public String pattern;
+	public boolean userFirstName(String firstName) throws InvalidUserRegistrationException {
+		pattern = "^[A-Z]{1}[a-z]{2,}";
+		if(Pattern.matches(pattern, firstName)) {
+			throw new InvalidUserRegistrationException("Name is Valid");
+		}
+		//System.out.println(Pattern.matches(pattern, firstName));
+		return Pattern.matches(pattern, firstName);
 	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	
+	public boolean userLastName(String lastName) throws InvalidUserRegistrationException{
+		pattern = "^[A-Z]{1}[a-z]{2,}";
+		System.out.println(Pattern.matches(pattern, lastName));
+		return Pattern.matches(pattern, lastName);
 	}
-
-	public String getLastName() {
-		return LastName;
+	
+	public boolean userEmailId(String emailId)throws InvalidUserRegistrationException {
+		pattern = "^[a-zA-Z0-9]+([-_+.a-zA-Z0-9])*@[A-Za-z]+.[A-Za-z]+(.[A-Za-z]{2})*$";
+		System.out.println(Pattern.matches(pattern, emailId));
+		return Pattern.matches(pattern, emailId);
 	}
-
-	public void setLastName(String lastName) {
-		LastName = lastName;
+	
+	public boolean userPhoneNumber(String phoneNumber)throws InvalidUserRegistrationException {
+		pattern = "^[1-9]{2}[\\s][0-9]{10}$"; 
+		System.out.println(Pattern.matches(pattern, phoneNumber));
+		return (Pattern.matches(pattern, phoneNumber));
 	}
-
-	public String getPhoneNumber() {
-		return phoneNumber;
+	
+	public boolean userPasswordRule1(String password) throws InvalidUserRegistrationException {
+		pattern = "^[a-z]{8,}";
+		System.out.println(Pattern.matches(pattern, password));
+		return (Pattern.matches(pattern, password));
 	}
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	
+	public boolean userPasswordRule2(String password) throws InvalidUserRegistrationException {
+		pattern =  "^(?=.*[A-Z])(?=.*[a-z])[A-Za-z]{8,}$";
+		System.out.println(Pattern.matches(pattern, password));
+		return (Pattern.matches(pattern, password));
 	}
-
-	public String geteMail() {
-		return emailId;
+	
+	public boolean userPasswordRule3(String password) throws InvalidUserRegistrationException {
+		pattern = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9]{8,}$";
+		System.out.println(Pattern.matches(pattern, password));
+		return (Pattern.matches(pattern, password));
 	}
-
-	public void seteMail(String email) {
-		this.emailId = email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	@Override
-	public String toString() {
-		return "UserRegistration [firstName=" + firstName + ", LastName=" + LastName + ", phoneNumber=" + phoneNumber
-				+ ", emailId=" + emailId + ", password=" + password + "]";
+	
+	public boolean userPasswordRule4(String password) throws InvalidUserRegistrationException {
+		pattern = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,}$";
+		System.out.println(Pattern.matches(pattern, password));
+		return (Pattern.matches(pattern, password));
 	}
 }
